@@ -1,0 +1,271 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #3a8bd6, #219781);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Container */
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 90%;
+    text-align: center;
+    overflow: auto;
+    max-height: 90vh;
+}
+
+.form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Form Heading */
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h1:after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #3a8bd6, #219781);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Section Headers */
+.section-header {
+    background: linear-gradient(90deg, #f8f9fa, #e9ecef);
+    color: #2c3e50;
+    padding: 12px 15px;
+    margin: 30px 0 15px 0;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-left: 5px solid #3a8bd6;
+    text-align: left;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+/* Labels */
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Input Fields */
+.form-control, .form-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Focus Effects */
+.form-control:focus, .form-select:focus {
+    border-color: #3a8bd6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(58, 139, 214, 0.2);
+    background: #fff;
+}
+
+/* Submit Button */
+.btn-primary {
+    background: linear-gradient(90deg, #3a8bd6, #219781);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(58, 139, 214, 0.3);
+}
+
+/* Button Hover */
+.btn-primary:hover {
+    background: linear-gradient(90deg, #219781, #3a8bd6);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(58, 139, 214, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+/* Row Styling */
+.row {
+    margin-right: -10px;
+    margin-left: -10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.col-md-3, .col-md-4, .col-md-6 {
+    padding: 0 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .container {
+        max-width: 95%;
+        padding: 20px;
+    }
+    
+    .form-container {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 15px;
+    }
+    
+    .form-container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .section-header {
+        font-size: 15px;
+    }
+}
+
+/* Form Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+.form-group:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+.form-group:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #3a8bd6, #219781);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #219781, #3a8bd6);
+}
+
+/* Optional Floating Labels (add .floating-label class to form-group) */
+.floating-label {
+    position: relative;
+}
+
+.floating-label label {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    color: #6c757d;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    font-size: 14px;
+}
+
+.floating-label .form-control:focus ~ label,
+.floating-label .form-control:not(:placeholder-shown) ~ label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    background: white;
+    padding: 0 5px;
+    color: #3a8bd6;
+    font-weight: 600;
+}
+
+/* Optional Input Icons */
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+.input-with-icon .form-control {
+    padding-right: 40px;
+}
+
+.input-with-icon .form-control:focus + i {
+    color: #3a8bd6;
+}

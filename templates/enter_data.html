@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/enter_data.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Product Data</h2>
+        <form action="/submit" method="post">
+            <div class="form-group">
+                <label for="sku">SKU</label>
+                <input type="text" id="sku" name="sku" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category" required>
+                    {% for category in categories %}
+                        <option value="{{ category }}">{{ category }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="sales_last_month">Sales Last Month</label>
+                <input type="number" id="sales_last_month" name="sales_last_month" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sales_last_week">Sales Last Week</label>
+                <input type="number" id="sales_last_week" name="sales_last_week" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sales_trend">Sales Trend</label>
+                <input type="number" step="0.01" id="sales_trend" name="sales_trend" required>
+            </div>
+
+            <div class="form-group">
+                <label for="current_stock">Current Stock</label>
+                <input type="number" id="current_stock" name="current_stock" required>
+            </div>
+
+            <div class="form-group">
+                <label for="warehouse_capacity">Warehouse Capacity</label>
+                <input type="number" id="warehouse_capacity" name="warehouse_capacity" required>
+            </div>
+
+            <div class="form-group">
+                <label for="supplier_lead_time">Supplier Lead Time (days)</label>
+                <input type="number" id="supplier_lead_time" name="supplier_lead_time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="manufacturing_lead_time">Manufacturing Lead Time (days)</label>
+                <input type="number" id="manufacturing_lead_time" name="manufacturing_lead_time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="transportation_mode">Transportation Mode</label>
+                <select id="transportation_mode" name="transportation_mode" required>
+                    {% for mode in transportation_modes %}
+                        <option value="{{ mode }}">{{ mode }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="historical_defect_rate">Historical Defect Rate</label>
+                <input type="number" step="0.01" id="historical_defect_rate" name="historical_defect_rate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price_adjustment">Price Adjustment</label>
+                <input type="number" step="0.01" id="price_adjustment" name="price_adjustment" required>
+            </div>
+
+            <div class="form-group">
+                <label for="seasonality_index">Seasonality Index</label>
+                <input type="number" step="0.01" id="seasonality_index" name="seasonality_index" required>
+            </div>
+
+            <div class="form-group">
+                <label for="holiday_effect">Holiday Effect</label>
+                <input type="number" step="0.01" id="holiday_effect" name="holiday_effect" required>
+            </div>
+
+            <div class="form-group">
+                <label for="customer_demand_fluctuation">Customer Demand Fluctuation</label>
+                <input type="number" step="0.01" id="customer_demand_fluctuation" name="customer_demand_fluctuation" required>
+            </div>
+
+            <div class="form-group">
+                <label for="economic_indicator">Economic Indicator</label>
+                <input type="number" step="0.01" id="economic_indicator" name="economic_indicator" required>
+            </div>
+
+            <div class="form-group">
+                <label for="competitor_pricing">Competitor Pricing</label>
+                <input type="number" step="0.01" id="competitor_pricing" name="competitor_pricing" required>
+            </div>
+
+            <div class="form-group">
+                <label for="marketing_spend">Marketing Spend</label>
+                <input type="number" id="marketing_spend" name="marketing_spend" required>
+            </div>
+
+            <div class="form-group">
+                <label for="regional_sales_growth">Regional Sales Growth</label>
+                <input type="number" step="0.01" id="regional_sales_growth" name="regional_sales_growth" required>
+            </div>
+
+            <div class="form-group">
+                <label for="inventory_turnover_rate">Inventory Turnover Rate</label>
+                <input type="number" step="0.01" id="inventory_turnover_rate" name="inventory_turnover_rate" required>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
